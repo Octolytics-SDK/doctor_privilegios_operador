@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.telephony.TelephonyManager
 import android.view.View
+import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
 
@@ -24,15 +25,22 @@ class MainActivity : AppCompatActivity() {
     private fun checkCarrierPrivileges() {
         val telephonyManager = getSystemService(Context.TELEPHONY_SERVICE) as? TelephonyManager
         val textView = findViewById<TextView>(R.id.tv_privileges)
+        val buttonRefresh = findViewById<Button>(R.id.btn_refresh)
+
+        buttonRefresh.setOnClickListener {
+            checkCarrierPrivileges()
+        }
 
         if (telephonyManager?.hasCarrierPrivileges() == true) {
             textView.setTextColor(Color.GREEN)
             textView.text = "Tiene privilegios de operador"
-            textView.visibility = View.VISIBLE
+
         } else {
             textView.setTextColor(Color.RED)
             textView.text = "No tiene privilegios de operador"
-            textView.visibility = View.VISIBLE
         }
+
+        textView.visibility = View.VISIBLE
+        buttonRefresh.visibility = View.VISIBLE
     }
 }
