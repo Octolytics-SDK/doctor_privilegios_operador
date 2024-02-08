@@ -25,11 +25,6 @@ class MainActivity : AppCompatActivity() {
     private fun checkCarrierPrivileges() {
         val telephonyManager = getSystemService(Context.TELEPHONY_SERVICE) as? TelephonyManager
         val textView = findViewById<TextView>(R.id.tv_privileges)
-        val buttonRefresh = findViewById<Button>(R.id.btn_refresh)
-
-        buttonRefresh.setOnClickListener {
-            checkCarrierPrivileges()
-        }
 
         if (telephonyManager?.hasCarrierPrivileges() == true) {
             textView.setTextColor(Color.GREEN)
@@ -41,6 +36,5 @@ class MainActivity : AppCompatActivity() {
         }
 
         textView.visibility = View.VISIBLE
-        buttonRefresh.visibility = View.VISIBLE
     }
 }
