@@ -7,6 +7,7 @@ import android.telephony.TelephonyManager
 import android.text.TextPaint
 import android.view.View
 import android.widget.ImageView
+import android.widget.Button
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 
@@ -27,7 +28,7 @@ class MainActivity : AppCompatActivity() {
         val textView = findViewById<TextView>(R.id.tv_privileges)
         val iconView = findViewById<ImageView>(R.id.icon_privileges)
 
-        if (telephonyManager?.hasCarrierPrivileges() == false) {
+        if (telephonyManager?.hasCarrierPrivileges() == true) {
             textView.setTextColor(Color.GREEN)
             textView.text = "Tiene privilegios de operador"
             textView.visibility = View.VISIBLE
