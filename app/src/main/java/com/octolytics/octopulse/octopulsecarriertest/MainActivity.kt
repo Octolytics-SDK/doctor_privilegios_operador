@@ -7,7 +7,6 @@ import android.telephony.TelephonyManager
 import android.text.TextPaint
 import android.view.View
 import android.widget.ImageView
-import android.widget.Button
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 
@@ -31,18 +30,17 @@ class MainActivity : AppCompatActivity() {
         if (telephonyManager?.hasCarrierPrivileges() == true) {
             textView.setTextColor(Color.GREEN)
             textView.text = "Tiene privilegios de operador"
-            textView.visibility = View.VISIBLE
             iconView.setImageResource(R.drawable.ic_check)
             iconView.setColorFilter(Color.GREEN)
-            iconView.visibility = View.VISIBLE
         } else {
             textView.setTextColor(Color.RED)
             textView.text = "No tiene privilegios de operador"
-            textView.visibility = View.VISIBLE
             iconView.setImageResource(R.drawable.ic_close)
             iconView.setColorFilter(Color.RED)
-            iconView.visibility = View.VISIBLE
         }
+
+        textView.visibility = View.VISIBLE
+        iconView.visibility = View.VISIBLE
         addTextBorder(textView)
     }
 
