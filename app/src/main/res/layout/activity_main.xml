@@ -7,18 +7,32 @@
     android:background="@color/white"
     tools:context=".MainActivity">
 
+
+  <ImageView
+      android:id="@+id/icon_privileges"
+      android:layout_width="60dp"
+      android:layout_height="60dp"
+      android:layout_marginTop="8dp"
+      android:layout_marginEnd="8dp"
+      android:src="@drawable/ic_check"
+      android:layout_marginBottom="30dp"
+      app:layout_constraintBottom_toTopOf="@id/tv_privileges"
+      app:layout_constraintEnd_toEndOf="@+id/tv_privileges"
+      app:layout_constraintStart_toStartOf="@+id/tv_privileges" />
+
   <TextView
       android:id="@+id/tv_privileges"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:textColor="@android:color/black"
-      android:textSize="18sp"
+      android:textSize="22sp"
       android:textStyle="bold"
-      android:visibility="gone"
-      android:layout_margin="10dp"
+      android:visibility="visible"
+      android:padding="10dp"
       app:layout_constraintBottom_toBottomOf="parent"
       app:layout_constraintEnd_toEndOf="parent"
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toTopOf="parent" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
