@@ -9,10 +9,10 @@ android {
 
     signingConfigs {
         demo {
-            storeFile file('/Users/lromeroalc/Downloads/altandemo.jks')
-            keyAlias 'altandemo'
-            storePassword '1652023'
-            keyPassword '1652023'
+            storeFile file('pathToKeystoreFile')
+            keyAlias 'alias'
+            storePassword 'password'
+            keyPassword 'password'
         }
     }
 
